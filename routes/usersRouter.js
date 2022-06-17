@@ -47,4 +47,27 @@ res.status(201).json({
     }
 }) 
 
+// Update user by id
+router.put('/:id', async(req, res)=> {
+    const id = req.params.id
+    const newUserData = req.body
+   try {
+    const user = await usersModel.findByIdAndUpdate(id, newUserData, {new:true})
+    res.status(202).json(user)
+   } catch (error) {
+       console.error(error)
+   }
+
+})
+// Delete the user
+router.delete('/:id',async(req, res)=> {
+    const id = req.params.id
+    try {
+        await usersModel.findByIdAndDelete(id)
+        res.status(200).json({msg: 'User was deleted'})
+    } catch (error) {
+        console.log(error)
+        
+    }
+})
 module.exports = router
