@@ -65,3 +65,5 @@ book_content: type: String, required: true,
 ### Middleware
 
 authMiddleware: it takes token from the header and is used to protect the routes
+
+## Globally posted in Heroku, please use link: https://aas-book-app.herokuapp.com/ 
