@@ -2,6 +2,7 @@ const express = require('express')
 require('dotenv').config()
 const morgan = require('morgan')
 const helmet = require('helmet')
+const cors = require('cors')
 
 
 
@@ -18,6 +19,7 @@ const PORT = process.env.PORT || 5500
 app.use(express.json())
 app.use(morgan('dev'))
 app.use(helmet())
+app.use(cors())
 
 app.use(express.json())
 app.use('/users', usersRouter)

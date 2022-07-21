@@ -11,10 +11,12 @@ const userSchema = mongoose.Schema({
     },
     birthday: {
         type: Date,
-        required: true
+      
     },
     age: {
-        type: Number
+        type: Number,
+       
+        
     },
     password: {
         type:String,
